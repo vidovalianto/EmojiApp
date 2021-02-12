@@ -1,0 +1,37 @@
+//
+//  EmojiPickerViewController.swift
+//  EmojiPickerView
+//
+//  Created by Vido Shaweddy on 2/7/21.
+//
+
+import UIKit
+
+protocol EmojiPickerViewDelegate: AnyObject {
+  func buttonDidClicked(_ emoji: String)
+}
+
+open class EmojiPickerViewController: UIViewController {
+  struct ViewModel {
+    let title: String
+    let emojis: [EmojiModel]
+  }
+
+  weak var delegate: EmojiPickerViewDelegate?
+
+  private(set) lazy var collectionView = makeCollectionView()
+  private lazy var dataSource = makeDataSource(for: collectionView)
+  private var viewModel: ViewModel?
+
+  func configure(_ viewModel: ViewModel) {
+    self.viewModel = viewModel
+    setup(collectionView, dataSource: dataSource)
+    update(dataSource: dataSource, items: viewModel.emojis)
+  }
+
+  open override func viewDidLoad() {
+    self.view.backgroundColor = .systemBackground
+  }
+}
+
+
