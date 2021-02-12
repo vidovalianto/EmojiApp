@@ -30,6 +30,8 @@
 		E474AB8425D608590004D72C /* EmojiPickerViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB7525D608590004D72C /* EmojiPickerViewController+CollectionView.swift */; };
 		E474AB8525D608590004D72C /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = E474AB7725D608590004D72C /* emoji.json */; };
 		E474AB8A25D64B280004D72C /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB8925D64B270004D72C /* ParentViewController.swift */; };
+		E4E6120D25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6120C25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift */; };
+		E4E6121225D6F8CF009576F1 /* ParentViewController+PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6121125D6F8CF009576F1 /* ParentViewController+PageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +81,8 @@
 		E474AB7525D608590004D72C /* EmojiPickerViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiPickerViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		E474AB7725D608590004D72C /* emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
 		E474AB8925D64B270004D72C /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
+		E4E6120C25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
+		E4E6121125D6F8CF009576F1 /* ParentViewController+PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentViewController+PageViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -223,6 +227,8 @@
 			isa = PBXGroup;
 			children = (
 				E474AB8925D64B270004D72C /* ParentViewController.swift */,
+				E4E6121125D6F8CF009576F1 /* ParentViewController+PageViewController.swift */,
+				E4E6120C25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift */,
 				E474AB7425D608590004D72C /* EmojiPickerViewController.swift */,
 				E474AB7525D608590004D72C /* EmojiPickerViewController+CollectionView.swift */,
 			);
@@ -368,6 +374,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4E6121225D6F8CF009576F1 /* ParentViewController+PageViewController.swift in Sources */,
 				E474AB8125D608590004D72C /* SegmentedControlCell.swift in Sources */,
 				E474AB8A25D64B280004D72C /* ParentViewController.swift in Sources */,
 				E474AB3425D6083F0004D72C /* ViewController.swift in Sources */,
@@ -377,6 +384,7 @@
 				E474AB7925D608590004D72C /* EmojiViewModel.swift in Sources */,
 				E474AB7825D608590004D72C /* EmojiListViewModel.swift in Sources */,
 				E474AB7E25D608590004D72C /* Trie.swift in Sources */,
+				E4E6120D25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift in Sources */,
 				E474AB7D25D608590004D72C /* EmojiModel.swift in Sources */,
 				E474AB8225D608590004D72C /* EmojiCell.swift in Sources */,
 				E474AB7C25D608590004D72C /* CategoryModel.swift in Sources */,

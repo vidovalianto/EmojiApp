@@ -8,29 +8,34 @@
 import Combine
 import UIKit
 
-class ParentViewController: UINavigationController {
-  private var navController: UINavigationController!
+class ParentViewController: UINavigationController, UIPageViewControllerDelegate {
   private var pageVC: UIPageViewController!
   private var searchVC: EmojiPickerViewController!
-  private var emojiLVM: EmojiListViewModel!
   private let searchController = UISearchController()
-
-  private var searchTask: DispatchWorkItem?
   private var cancellables = Set<AnyCancellable>()
-  private var emojisVC = [UIViewController]()
 
   public var color: UIColor = .systemBackground
+  public var collectionViewColor: UIColor = .systemBackground
+  var emojiLVM: EmojiListViewModel!
+  var emojisVC = [UIViewController]()
+  var searchTask: DispatchWorkItem?
 
   override func viewDidLoad() {
     self.view.backgroundColor = color
 
     emojiLVM = EmojiListViewModel()
     searchVC = EmojiPickerViewController()
+    searchVC.color = collectionViewColor
 
-    self.pageVC = UIPageViewController()
-    self.viewControllers = [pageVC]
-    self.pageVC.navigationItem.searchController = searchController
+    pageVC = UIPageViewController(transitionStyle: .scroll,
+                                  navigationOrientation: .horizontal,
+                                  options: nil)
+    pageVC.navigationItem.searchController = searchController
+    pageVC.dataSource = self
+    pageVC.delegate = self
+    viewControllers = [pageVC]
 
+    self.navigationBar.isTranslucent = false
     searchController.searchResultsUpdater = self
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search Emojis"
@@ -62,6 +67,7 @@ class ParentViewController: UINavigationController {
         guard let self = self else { return }
         self.emojisVC = categories.map({ category -> UIViewController in
           let vc = EmojiPickerViewController()
+          vc.color = self.collectionViewColor
           let viewModel = EmojiPickerViewController.ViewModel(title: category.title,
                                                               emojis: category.emojis)
           vc.configure(viewModel)
@@ -75,23 +81,5 @@ class ParentViewController: UINavigationController {
                                          completion: nil)
         }
       }.store(in: &cancellables)
-  }
-}
-
-extension ParentViewController: UISearchResultsUpdating {
-  public func updateSearchResults(for searchController: UISearchController) {
-    guard let text = searchController.searchBar.text, !text.isEmpty || !text.replacingOccurrences(of: " ", with: "").isEmpty else {
-      emojiLVM.isSearching = false
-      return
-    }
-
-    let task = DispatchWorkItem { [weak self] in
-      DispatchQueue.global().async { [weak self] in
-        self?.emojiLVM.search(text)
-      }
-    }
-
-    self.searchTask = task
-    DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: task)
   }
 }

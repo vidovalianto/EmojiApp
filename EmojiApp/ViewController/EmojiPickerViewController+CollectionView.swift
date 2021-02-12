@@ -20,7 +20,7 @@ extension EmojiPickerViewController {
     collectionView.dragInteractionEnabled = true
     collectionView.alwaysBounceVertical = true
     collectionView.delaysContentTouches = false
-    collectionView.backgroundColor = UIColor.systemGroupedBackground
+    collectionView.backgroundColor = color
     collectionView.translatesAutoresizingMaskIntoConstraints = false
     return collectionView
   }
