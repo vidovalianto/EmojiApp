@@ -32,6 +32,7 @@
 		E474AB8A25D64B280004D72C /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB8925D64B270004D72C /* ParentViewController.swift */; };
 		E4E6120D25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6120C25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift */; };
 		E4E6121225D6F8CF009576F1 /* ParentViewController+PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6121125D6F8CF009576F1 /* ParentViewController+PageViewController.swift */; };
+		E4E6121D25D7097D009576F1 /* EmojiPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E6121C25D7097D009576F1 /* EmojiPageControl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		E474AB8925D64B270004D72C /* ParentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
 		E4E6120C25D6F882009576F1 /* ParentViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		E4E6121125D6F8CF009576F1 /* ParentViewController+PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ParentViewController+PageViewController.swift"; sourceTree = "<group>"; };
+		E4E6121C25D7097D009576F1 /* EmojiPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiPageControl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +212,7 @@
 			children = (
 				E474AB6F25D608590004D72C /* SegmentedControl */,
 				E474AB7225D608590004D72C /* EmojiCell.swift */,
+				E4E6121C25D7097D009576F1 /* EmojiPageControl.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				E4E6121225D6F8CF009576F1 /* ParentViewController+PageViewController.swift in Sources */,
 				E474AB8125D608590004D72C /* SegmentedControlCell.swift in Sources */,
 				E474AB8A25D64B280004D72C /* ParentViewController.swift in Sources */,
+				E4E6121D25D7097D009576F1 /* EmojiPageControl.swift in Sources */,
 				E474AB3425D6083F0004D72C /* ViewController.swift in Sources */,
 				E474AB3025D6083F0004D72C /* AppDelegate.swift in Sources */,
 				E474AB8325D608590004D72C /* EmojiPickerViewController.swift in Sources */,

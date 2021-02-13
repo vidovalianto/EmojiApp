@@ -10,10 +10,10 @@ import Foundation
 
 final class EmojiListViewModel: ObservableObject {
   @Published var categories = [CategoryModel]()
+  @Published var isSearching = false
   var searchResults = [EmojiModel]()
   let queue = DispatchQueue(label: "com.emojiview.decode")
   let emojiTrie = Trie()
-  @Published var isSearching = false
 
   init() {
     queue.async { [weak self] in
