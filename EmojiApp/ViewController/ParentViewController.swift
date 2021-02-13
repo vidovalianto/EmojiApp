@@ -8,6 +8,10 @@
 import Combine
 import UIKit
 
+protocol ParentViewControllerDelegate: AnyObject {
+  func emojiDidClicked(emoji: String)
+}
+
 class ParentViewController: UINavigationController {
   private let searchController = UISearchController()
   private var searchVC: EmojiPickerViewController!
@@ -22,6 +26,8 @@ class ParentViewController: UINavigationController {
   var searchTask: DispatchWorkItem?
   var pendingIndex = 0
 
+  weak var emojiDelegate: ParentViewControllerDelegate?
+
   override func viewDidLoad() {
     self.view.backgroundColor = color
 
@@ -29,6 +35,8 @@ class ParentViewController: UINavigationController {
     setupPageVC()
     setupSearchController()
     setupPageControl()
+
+    searchVC.delegate = self
 
     emojiLVM.$isSearching
       .receive(on: DispatchQueue.main)
@@ -63,6 +71,7 @@ class ParentViewController: UINavigationController {
           let viewModel = EmojiPickerViewController.ViewModel(title: category.titleEmoji,
                                                               emojis: category.emojis)
           vc.configure(viewModel)
+          vc.delegate = self
           emojisVCIcon.append(category.titleEmoji)
           return vc
         })
@@ -127,5 +136,12 @@ private extension String {
     let image = UIGraphicsGetImageFromCurrentImageContext()
     UIGraphicsEndImageContext()
     return image
+  }
+}
+
+
+extension ParentViewController: EmojiPickerViewDelegate {
+  func emojiDidClicked(_ emoji: String) {
+    self.emojiDelegate?.emojiDidClicked(emoji: emoji)
   }
 }

@@ -64,7 +64,7 @@ extension EmojiPickerViewController {
     let itemCellRegistration = cellRegistration { view, indexPath, item in
       let viewModel = EmojiCell.ViewModel(model: item,
                                            primaryAction: { [weak self] emoji in
-                                            self?.delegate?.buttonDidClicked(emoji)
+                                            self?.delegate?.emojiDidClicked(emoji)
                                            })
       view.configure(viewModel)
     }
