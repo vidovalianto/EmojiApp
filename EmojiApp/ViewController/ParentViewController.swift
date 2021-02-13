@@ -39,7 +39,6 @@ class ParentViewController: UIViewController {
     setupPageControl()
 
     searchVC.delegate = self
-    pageVC.pageControl?.layer.cornerRadius = 25
 
     emojiLVM.$isSearching
       .receive(on: DispatchQueue.main)
@@ -123,6 +122,7 @@ class ParentViewController: UIViewController {
     ["👮🏻‍♀️", "🐻", "🥤","⛰", "🚴🏻‍♂️", "💡", "⁉️", "🏳️"].enumerated().forEach { i, emoji in
       pageControl.setIndicatorImage(emoji.image(), forPage: i)
     }
+    pageVC.pageControl?.layer.cornerRadius = 25
   }
 
   private func setupSearchController() {
