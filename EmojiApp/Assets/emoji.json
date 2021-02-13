@@ -10,7 +10,8 @@
           "flagged": false,
           "keywords": [
             "face",
-            "grin"
+            "grin",
+            "happy"
           ]
         },
         {
@@ -23,7 +24,8 @@
             "eye",
             "face",
             "grin",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -36,7 +38,9 @@
             "face",
             "joy",
             "laugh",
-            "tear"
+            "tear",
+            "happy",
+            "lol"
           ]
         },
         {
@@ -51,7 +55,8 @@
             "laugh",
             "lol",
             "rofl",
-            "rolling"
+            "rolling",
+            "happy"
           ]
         },
         {
@@ -64,7 +69,8 @@
             "face",
             "mouth",
             "open",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -78,7 +84,8 @@
             "face",
             "mouth",
             "open",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -107,7 +114,8 @@
             "mouth",
             "open",
             "satisfied",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -131,7 +139,8 @@
             "blush",
             "eye",
             "face",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -202,7 +211,8 @@
           "flagged": false,
           "keywords": [
             "face",
-            "kiss"
+            "kiss",
+            "xxx"
           ]
         },
         {
@@ -215,7 +225,8 @@
             "eye",
             "face",
             "kiss",
-            "smile"
+            "smile",
+            "xxx"
           ]
         },
         {
@@ -228,20 +239,22 @@
             "closed",
             "eye",
             "face",
-            "kiss"
+            "kiss",
+            "xxx"
           ]
         },
         {
           "no": 18,
           "code": "U+263A",
-          "emoji": "☺",
+          "emoji": "☺️",
           "description": "WHITE SMILING FACE≊ smiling face",
           "flagged": false,
           "keywords": [
             "face",
             "outlined",
             "relaxed",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -252,7 +265,8 @@
           "flagged": false,
           "keywords": [
             "face",
-            "smile"
+            "smile",
+            "happy"
           ]
         },
         {
@@ -264,7 +278,8 @@
           "keywords": [
             "face",
             "hug",
-            "hugging"
+            "hugging",
+            "xo"
           ]
         },
         {

@@ -27,27 +27,4 @@ extension ParentViewController: UIPageViewControllerDataSource {
   func presentationIndex(for pageViewController: UIPageViewController) -> Int {
     return 0
   }
-
-  func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
-    if completed {
-      pageControl.currentPage = pendingIndex
-    }
-  }
-}
-
-extension ParentViewController: EmojiPageControlDelegate {
-  func didPick(index: Int) {
-    guard index < emojisVC.count else { return }
-    pageVC.setViewControllers([emojisVC[index]],
-                              direction: .forward,
-                              animated: false,
-                              completion: nil)
-  }
-}
-
-extension ParentViewController: UIPageViewControllerDelegate {
-  func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
-    guard let view = pendingViewControllers.first, let index = emojisVC.firstIndex(where: { $0 == view }) else { return }
-    pendingIndex = index
-  }
 }

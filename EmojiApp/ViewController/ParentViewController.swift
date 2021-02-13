@@ -21,47 +21,14 @@ class ParentViewController: UINavigationController {
   var emojisVCIcon = [String]()
   var searchTask: DispatchWorkItem?
   var pendingIndex = 0
-  lazy var pageControl: EmojiPageControl = {
-    let pageControl = EmojiPageControl()
-    pageControl.translatesAutoresizingMaskIntoConstraints = false
-    return pageControl
-  }()
 
   override func viewDidLoad() {
     self.view.backgroundColor = color
 
     emojiLVM = EmojiListViewModel()
-    searchVC = EmojiPickerViewController()
-    searchVC.color = collectionViewColor
-
-    pageVC = UIPageViewController(transitionStyle: .scroll,
-                                  navigationOrientation: .horizontal,
-                                  options: nil)
-    pageVC.navigationItem.searchController = searchController
-    pageVC.dataSource = self
-    pageVC.delegate = self
-
-    viewControllers = [pageVC]
-//    setupPageControl()
-
-    self.navigationBar.isTranslucent = false
-    searchController.searchResultsUpdater = self
-    searchController.obscuresBackgroundDuringPresentation = false
-    searchController.searchBar.placeholder = "Search Emojis"
-    definesPresentationContext = true
-    self.pageVC.setViewControllers([UIViewController()],
-                                   direction: .forward,
-                                   animated: false,
-                                   completion: nil)
-    let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
-    pageControl.backgroundStyle = .prominent
-    pageControl.numberOfPages = 7
-    pageControl.currentPage = 0
-    pageControl.pageIndicatorTintColor = .systemFill
-    pageControl.currentPageIndicatorTintColor = .secondaryLabel
-    ["👮🏻‍♀️", "🐻", "⛰", "🚴🏻‍♂️", "💡", "⁉️", "🏳️"].enumerated().forEach { i, emoji in
-      pageControl.setIndicatorImage(emoji.image(), forPage: i)
-    }
+    setupPageVC()
+    setupSearchController()
+    setupPageControl()
 
     emojiLVM.$isSearching
       .receive(on: DispatchQueue.main)
@@ -75,13 +42,13 @@ class ParentViewController: UINavigationController {
                                          direction: .forward,
                                          animated: false,
                                          completion: nil)
-          pageControl.isHidden = true
+          self.pageVC.view.subviews.first?.isHidden = true
         } else if let initialVC = self.emojisVC.first {
           self.pageVC.setViewControllers([initialVC],
                                          direction: .forward,
                                          animated: false,
                                          completion: nil)
-          pageControl.isHidden = false
+          self.pageVC.view.subviews.first?.isHidden = false
         }
       }.store(in: &cancellables)
 
@@ -107,25 +74,45 @@ class ParentViewController: UINavigationController {
                                          animated: false,
                                          completion: nil)
         }
-        pageControl.numberOfPages = self.emojisVC.count
-        pageControl.currentPage = 0
       }.store(in: &cancellables)
   }
 
+  // MARK: - Private
+
+  private func setupPageVC() {
+    searchVC = EmojiPickerViewController()
+    searchVC.color = collectionViewColor
+
+    pageVC = UIPageViewController(transitionStyle: .scroll,
+                                  navigationOrientation: .horizontal,
+                                  options: nil)
+    pageVC.setViewControllers([UIViewController()],
+                                   direction: .forward,
+                                   animated: false,
+                                   completion: nil)
+    pageVC.navigationItem.searchController = searchController
+    pageVC.dataSource = self
+    viewControllers = [pageVC]
+  }
+
   private func setupPageControl() {
-    view.addSubview(pageControl)
-    view.bringSubviewToFront(pageControl)
-
-    NSLayoutConstraint.activate([
-      pageControl.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -16),
-      pageControl.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 16),
-      pageControl.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16),
-      pageControl.heightAnchor.constraint(equalToConstant: 50)
-    ])
-
-    pageControl.delegate = self
-    pageControl.currentPage = 0
+    let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
     pageControl.backgroundStyle = .prominent
+    pageControl.numberOfPages = 7
+    pageControl.currentPage = 0
+    pageControl.pageIndicatorTintColor = .systemFill
+    pageControl.currentPageIndicatorTintColor = .secondaryLabel
+    ["👮🏻‍♀️", "🐻", "⛰", "🚴🏻‍♂️", "💡", "⁉️", "🏳️"].enumerated().forEach { i, emoji in
+      pageControl.setIndicatorImage(emoji.image(), forPage: i)
+    }
+  }
+
+  private func setupSearchController() {
+    self.navigationBar.isTranslucent = false
+    searchController.searchResultsUpdater = self
+    searchController.obscuresBackgroundDuringPresentation = false
+    searchController.searchBar.placeholder = "Search Emojis"
+    definesPresentationContext = true
   }
 }
 

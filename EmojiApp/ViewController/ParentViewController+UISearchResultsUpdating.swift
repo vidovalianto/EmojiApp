@@ -9,7 +9,9 @@ import UIKit
 
 extension ParentViewController: UISearchResultsUpdating {
   public func updateSearchResults(for searchController: UISearchController) {
-    guard let text = searchController.searchBar.text, !text.isEmpty || !text.replacingOccurrences(of: " ", with: "").isEmpty else {
+    guard let text = searchController.searchBar.text,
+          !text.isEmpty || !text.replacingOccurrences(of: " ", with: "").isEmpty
+    else {
       emojiLVM.isSearching = false
       return
     }
