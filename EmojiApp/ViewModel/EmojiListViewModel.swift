@@ -43,9 +43,8 @@ final class EmojiListViewModel: ObservableObject {
 
   private func loadJson<E: Decodable>(fileName: String, type: E.Type) -> E? {
     let decoder = JSONDecoder()
-    guard
-      let url = Bundle.main.url(forResource: fileName,
-                                withExtension: "json")
+    guard let url = Bundle.main.url(forResource: fileName,
+                                    withExtension: "json")
     else {
       return nil
     }

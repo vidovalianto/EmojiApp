@@ -22,6 +22,7 @@ open class EmojiPickerViewController: UIViewController {
   private(set) lazy var collectionView = makeCollectionView()
   private lazy var dataSource = makeDataSource(for: collectionView)
   private var viewModel: ViewModel?
+
   var color: UIColor = .systemBackground
 
   func configure(_ viewModel: ViewModel) {

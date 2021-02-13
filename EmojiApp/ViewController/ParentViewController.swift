@@ -134,7 +134,9 @@ class ParentViewController: UIViewController {
 }
 
 private extension String {
-  func image(width: CGFloat = 20, height: CGFloat = 20, fontSize: CGFloat = 15) -> UIImage? {
+  func image(width: CGFloat = Constant.Emoji.size.width,
+             height: CGFloat = Constant.Emoji.size.height,
+             fontSize: CGFloat = Constant.Emoji.fontSize) -> UIImage? {
     let size = CGSize(width: width, height: height)
     UIGraphicsBeginImageContextWithOptions(size, false, 0)
     UIColor.clear.set()
@@ -145,8 +147,19 @@ private extension String {
     UIGraphicsEndImageContext()
     return image
   }
-}
 
+  func image(size: CGSize = Constant.Emoji.size,
+             fontSize: CGFloat = Constant.Emoji.fontSize) -> UIImage? {
+    UIGraphicsBeginImageContextWithOptions(size, false, 0)
+    UIColor.clear.set()
+    let rect = CGRect(origin: .zero, size: size)
+    UIRectFill(CGRect(origin: .zero, size: size))
+    (self as AnyObject).draw(in: rect, withAttributes: [.font: UIFont.systemFont(ofSize: fontSize)])
+    let image = UIGraphicsGetImageFromCurrentImageContext()
+    UIGraphicsEndImageContext()
+    return image
+  }
+}
 
 extension ParentViewController: EmojiPickerViewDelegate {
   func emojiDidClicked(_ emoji: String) {
