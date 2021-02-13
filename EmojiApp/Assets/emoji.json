@@ -5148,7 +5148,11 @@
             "plant",
             "wind"
           ]
-        },
+        }]
+    },
+    {
+      "title": "food and drink",
+      "emojis": [
         {
           "no": 727,
           "code": "U+1F347",

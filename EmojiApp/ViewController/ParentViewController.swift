@@ -115,12 +115,12 @@ class ParentViewController: UIViewController {
 
   private func setupPageControl() {
     let pageControl = UIPageControl.appearance(whenContainedInInstancesOf: [UIPageViewController.self])
-    pageControl.numberOfPages = 7
+    pageControl.numberOfPages = 8
     pageControl.currentPage = 0
     pageControl.pageIndicatorTintColor = .systemFill
     pageControl.currentPageIndicatorTintColor = .secondaryLabel
     pageControl.backgroundColor = .systemGroupedBackground
-    ["👮🏻‍♀️", "🐻", "⛰", "🚴🏻‍♂️", "💡", "⁉️", "🏳️"].enumerated().forEach { i, emoji in
+    ["👮🏻‍♀️", "🐻", "🥤","⛰", "🚴🏻‍♂️", "💡", "⁉️", "🏳️"].enumerated().forEach { i, emoji in
       pageControl.setIndicatorImage(emoji.image(), forPage: i)
     }
   }
