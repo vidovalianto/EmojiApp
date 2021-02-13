@@ -39,6 +39,7 @@ class ParentViewController: UIViewController {
     setupPageControl()
 
     searchVC.delegate = self
+    pageVC.pageControl?.layer.cornerRadius = 25
 
     emojiLVM.$isSearching
       .receive(on: DispatchQueue.main)
