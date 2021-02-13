@@ -609,12 +609,13 @@
         {
           "no": 48,
           "code": "U+2639",
-          "emoji": "☹",
+          "emoji": "☹️",
           "description": "WHITE FROWNING FACE≊ frowning face",
           "flagged": false,
           "keywords": [
             "face",
-            "frown"
+            "frown",
+            "sad"
           ]
         },
         {
@@ -625,7 +626,8 @@
           "flagged": false,
           "keywords": [
             "face",
-            "frown"
+            "frown",
+            "sad"
           ]
         },
         {

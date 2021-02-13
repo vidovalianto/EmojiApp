@@ -12,8 +12,9 @@ protocol ParentViewControllerDelegate: AnyObject {
   func emojiDidClicked(emoji: String)
 }
 
-class ParentViewController: UINavigationController {
+class ParentViewController: UIViewController {
   private let searchController = UISearchController()
+  private let navigationVC = UINavigationController()
   private var searchVC: EmojiPickerViewController!
   private var cancellables = Set<AnyCancellable>()
 
@@ -26,12 +27,13 @@ class ParentViewController: UINavigationController {
   var searchTask: DispatchWorkItem?
   var pendingIndex = 0
 
-  weak var emojiDelegate: ParentViewControllerDelegate?
+  weak var delegate: ParentViewControllerDelegate?
 
   override func viewDidLoad() {
     self.view.backgroundColor = color
 
     emojiLVM = EmojiListViewModel()
+    setupNavigationVC()
     setupPageVC()
     setupSearchController()
     setupPageControl()
@@ -88,6 +90,12 @@ class ParentViewController: UINavigationController {
 
   // MARK: - Private
 
+  private func setupNavigationVC() {
+    self.addChild(navigationVC)
+    self.view.addSubview(navigationVC.view)
+    navigationVC.didMove(toParent: self)
+  }
+
   private func setupPageVC() {
     searchVC = EmojiPickerViewController()
     searchVC.color = collectionViewColor
@@ -101,7 +109,7 @@ class ParentViewController: UINavigationController {
                                    completion: nil)
     pageVC.navigationItem.searchController = searchController
     pageVC.dataSource = self
-    viewControllers = [pageVC]
+    navigationVC.viewControllers = [pageVC]
   }
 
   private func setupPageControl() {
@@ -117,7 +125,7 @@ class ParentViewController: UINavigationController {
   }
 
   private func setupSearchController() {
-    self.navigationBar.isTranslucent = false
+    navigationVC.navigationBar.isTranslucent = false
     searchController.searchResultsUpdater = self
     searchController.obscuresBackgroundDuringPresentation = false
     searchController.searchBar.placeholder = "Search Emojis"
@@ -142,6 +150,6 @@ private extension String {
 
 extension ParentViewController: EmojiPickerViewDelegate {
   func emojiDidClicked(_ emoji: String) {
-    self.emojiDelegate?.emojiDidClicked(emoji: emoji)
+    self.delegate?.emojiDidClicked(emoji: emoji)
   }
 }
