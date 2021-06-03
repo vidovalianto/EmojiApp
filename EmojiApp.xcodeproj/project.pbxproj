@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41995CB266991EA005648C4 /* EmojiPickerViewController in Frameworks */ = {isa = PBXBuildFile; productRef = E41995CA266991EA005648C4 /* EmojiPickerViewController */; };
 		E474AB3025D6083F0004D72C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB2F25D6083F0004D72C /* AppDelegate.swift */; };
 		E474AB3225D6083F0004D72C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB3125D6083F0004D72C /* SceneDelegate.swift */; };
 		E474AB3425D6083F0004D72C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB3325D6083F0004D72C /* ViewController.swift */; };
@@ -84,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41995CB266991EA005648C4 /* EmojiPickerViewController in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +236,9 @@
 			dependencies = (
 			);
 			name = EmojiApp;
+			packageProductDependencies = (
+				E41995CA266991EA005648C4 /* EmojiPickerViewController */,
+			);
 			productName = EmojiApp;
 			productReference = E474AB2C25D6083F0004D72C /* EmojiApp.app */;
 			productType = "com.apple.product-type.application";
@@ -305,6 +310,9 @@
 				Base,
 			);
 			mainGroup = E474AB2325D6083F0004D72C;
+			packageReferences = (
+				E41995C9266991EA005648C4 /* XCRemoteSwiftPackageReference "EmojiPickerView" */,
+			);
 			productRefGroup = E474AB2D25D6083F0004D72C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -697,6 +705,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E41995C9266991EA005648C4 /* XCRemoteSwiftPackageReference "EmojiPickerView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/vidovalianto/EmojiPickerView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E41995CA266991EA005648C4 /* EmojiPickerViewController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E41995C9266991EA005648C4 /* XCRemoteSwiftPackageReference "EmojiPickerView" */;
+			productName = EmojiPickerViewController;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E474AB2425D6083F0004D72C /* Project object */;
 }

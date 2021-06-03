@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "EmojiPickerViewController",
+        "repositoryURL": "https://github.com/vidovalianto/EmojiPickerView",
+        "state": {
+          "branch": null,
+          "revision": "8c9a0a0cb6af8b168e793337285adc5f86d4d9dd",
+          "version": "1.0.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

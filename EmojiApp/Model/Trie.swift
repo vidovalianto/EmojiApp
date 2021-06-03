@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Trie {
+final class Trie {
   private let head: Node
 
   init() { head = Node() }
