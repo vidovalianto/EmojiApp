@@ -16,6 +16,11 @@
 		E474AB3C25D608420004D72C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E474AB3A25D608420004D72C /* LaunchScreen.storyboard */; };
 		E474AB4725D608420004D72C /* EmojiAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB4625D608420004D72C /* EmojiAppTests.swift */; };
 		E474AB5225D608420004D72C /* EmojiAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E474AB5125D608420004D72C /* EmojiAppUITests.swift */; };
+		E4CC4A5D2669A61700DDD5FF /* EmojiPickerViewController+PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC4A582669A61700DDD5FF /* EmojiPickerViewController+PageViewController.swift */; };
+		E4CC4A5E2669A61700DDD5FF /* EmojiPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC4A592669A61700DDD5FF /* EmojiPickerView.swift */; };
+		E4CC4A5F2669A61700DDD5FF /* EmojiPickerViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC4A5A2669A61700DDD5FF /* EmojiPickerViewController+CollectionView.swift */; };
+		E4CC4A602669A61700DDD5FF /* EmojiPickerViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC4A5B2669A61700DDD5FF /* EmojiPickerViewController+UISearchResultsUpdating.swift */; };
+		E4CC4A612669A61700DDD5FF /* EmojiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC4A5C2669A61700DDD5FF /* EmojiViewController.swift */; };
 		E4E612C225D84A97009576F1 /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612AF25D84A96009576F1 /* Constant.swift */; };
 		E4E612C325D84A97009576F1 /* EmojiListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612B125D84A96009576F1 /* EmojiListViewModel.swift */; };
 		E4E612C425D84A97009576F1 /* EmojiViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612B225D84A96009576F1 /* EmojiViewModel.swift */; };
@@ -24,11 +29,6 @@
 		E4E612C725D84A97009576F1 /* Trie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612B625D84A96009576F1 /* Trie.swift */; };
 		E4E612C825D84A97009576F1 /* Heap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612B725D84A96009576F1 /* Heap.swift */; };
 		E4E612C925D84A97009576F1 /* emoji.json in Resources */ = {isa = PBXBuildFile; fileRef = E4E612B925D84A96009576F1 /* emoji.json */; };
-		E4E612CA25D84A97009576F1 /* EmojiPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612BB25D84A97009576F1 /* EmojiPickerViewController.swift */; };
-		E4E612CB25D84A97009576F1 /* EmojiPickerViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612BC25D84A97009576F1 /* EmojiPickerViewController+CollectionView.swift */; };
-		E4E612CC25D84A97009576F1 /* ParentViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612BD25D84A97009576F1 /* ParentViewController+UISearchResultsUpdating.swift */; };
-		E4E612CD25D84A97009576F1 /* ParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612BE25D84A97009576F1 /* ParentViewController.swift */; };
-		E4E612CE25D84A97009576F1 /* ParentViewController+PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612BF25D84A97009576F1 /* ParentViewController+PageViewController.swift */; };
 		E4E612CF25D84A97009576F1 /* EmojiCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4E612C125D84A97009576F1 /* EmojiCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +64,11 @@
 		E474AB4D25D608420004D72C /* EmojiAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EmojiAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E474AB5125D608420004D72C /* EmojiAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmojiAppUITests.swift; sourceTree = "<group>"; };
 		E474AB5325D608420004D72C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E4CC4A582669A61700DDD5FF /* EmojiPickerViewController+PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiPickerViewController+PageViewController.swift"; sourceTree = "<group>"; };
+		E4CC4A592669A61700DDD5FF /* EmojiPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiPickerView.swift; sourceTree = "<group>"; };
+		E4CC4A5A2669A61700DDD5FF /* EmojiPickerViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiPickerViewController+CollectionView.swift"; sourceTree = "<group>"; };
+		E4CC4A5B2669A61700DDD5FF /* EmojiPickerViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiPickerViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
+		E4CC4A5C2669A61700DDD5FF /* EmojiViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiViewController.swift; sourceTree = "<group>"; };
 		E4E612AF25D84A96009576F1 /* Constant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		E4E612B125D84A96009576F1 /* EmojiListViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiListViewModel.swift; sourceTree = "<group>"; };
 		E4E612B225D84A96009576F1 /* EmojiViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiViewModel.swift; sourceTree = "<group>"; };
@@ -72,11 +77,6 @@
 		E4E612B625D84A96009576F1 /* Trie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trie.swift; sourceTree = "<group>"; };
 		E4E612B725D84A96009576F1 /* Heap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Heap.swift; sourceTree = "<group>"; };
 		E4E612B925D84A96009576F1 /* emoji.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = emoji.json; sourceTree = "<group>"; };
-		E4E612BB25D84A97009576F1 /* EmojiPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiPickerViewController.swift; sourceTree = "<group>"; };
-		E4E612BC25D84A97009576F1 /* EmojiPickerViewController+CollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "EmojiPickerViewController+CollectionView.swift"; sourceTree = "<group>"; };
-		E4E612BD25D84A97009576F1 /* ParentViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParentViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
-		E4E612BE25D84A97009576F1 /* ParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParentViewController.swift; sourceTree = "<group>"; };
-		E4E612BF25D84A97009576F1 /* ParentViewController+PageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ParentViewController+PageViewController.swift"; sourceTree = "<group>"; };
 		E4E612C125D84A97009576F1 /* EmojiCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,11 +203,11 @@
 		E4E612BA25D84A97009576F1 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				E4E612BB25D84A97009576F1 /* EmojiPickerViewController.swift */,
-				E4E612BC25D84A97009576F1 /* EmojiPickerViewController+CollectionView.swift */,
-				E4E612BD25D84A97009576F1 /* ParentViewController+UISearchResultsUpdating.swift */,
-				E4E612BE25D84A97009576F1 /* ParentViewController.swift */,
-				E4E612BF25D84A97009576F1 /* ParentViewController+PageViewController.swift */,
+				E4CC4A592669A61700DDD5FF /* EmojiPickerView.swift */,
+				E4CC4A5A2669A61700DDD5FF /* EmojiPickerViewController+CollectionView.swift */,
+				E4CC4A582669A61700DDD5FF /* EmojiPickerViewController+PageViewController.swift */,
+				E4CC4A5B2669A61700DDD5FF /* EmojiPickerViewController+UISearchResultsUpdating.swift */,
+				E4CC4A5C2669A61700DDD5FF /* EmojiViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -357,21 +357,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4E612CC25D84A97009576F1 /* ParentViewController+UISearchResultsUpdating.swift in Sources */,
-				E4E612CB25D84A97009576F1 /* EmojiPickerViewController+CollectionView.swift in Sources */,
 				E4E612C625D84A97009576F1 /* EmojiModel.swift in Sources */,
 				E4E612C825D84A97009576F1 /* Heap.swift in Sources */,
 				E474AB3425D6083F0004D72C /* ViewController.swift in Sources */,
 				E4E612C325D84A97009576F1 /* EmojiListViewModel.swift in Sources */,
-				E4E612CE25D84A97009576F1 /* ParentViewController+PageViewController.swift in Sources */,
-				E4E612CA25D84A97009576F1 /* EmojiPickerViewController.swift in Sources */,
+				E4CC4A5F2669A61700DDD5FF /* EmojiPickerViewController+CollectionView.swift in Sources */,
 				E4E612C725D84A97009576F1 /* Trie.swift in Sources */,
 				E474AB3025D6083F0004D72C /* AppDelegate.swift in Sources */,
+				E4CC4A612669A61700DDD5FF /* EmojiViewController.swift in Sources */,
 				E4E612C425D84A97009576F1 /* EmojiViewModel.swift in Sources */,
-				E4E612CD25D84A97009576F1 /* ParentViewController.swift in Sources */,
 				E4E612C525D84A97009576F1 /* CategoryModel.swift in Sources */,
 				E474AB3225D6083F0004D72C /* SceneDelegate.swift in Sources */,
+				E4CC4A5D2669A61700DDD5FF /* EmojiPickerViewController+PageViewController.swift in Sources */,
 				E4E612CF25D84A97009576F1 /* EmojiCell.swift in Sources */,
+				E4CC4A602669A61700DDD5FF /* EmojiPickerViewController+UISearchResultsUpdating.swift in Sources */,
+				E4CC4A5E2669A61700DDD5FF /* EmojiPickerView.swift in Sources */,
 				E4E612C225D84A97009576F1 /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
